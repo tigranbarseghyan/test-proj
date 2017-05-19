@@ -14,6 +14,7 @@ const server = http.createServer((req, res) => {
       <body>
       <h1> ${p.upper(__dirname)}</h1>
       <p>What a body =P</p>
+      <h3> ${p.gth("Hello world")}</h3>
       </body>
       `)
   } else {
