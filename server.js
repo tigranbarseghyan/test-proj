@@ -5,6 +5,10 @@ const http = require('http'); //download http module. This module is from node
 
 const {upper, gth, PORT} = require('./ports');
 
+
+/*
+createServer takes just one parameters.
+*/
 const server = http.createServer((req, res) => {
   if(req.url === '/'){
     res.setHeader('content-type', 'text/html');
@@ -21,5 +25,10 @@ const server = http.createServer((req, res) => {
     res.end('UNKNOWN');
   }
 })
+
+server.on('connection', socket => {
+  console.log("Someone conncted", socket);
+}
+)
 
 server.listen(PORT, () => console.log('Started our server'));
