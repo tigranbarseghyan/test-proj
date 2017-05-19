@@ -16,6 +16,8 @@ const total_data = [];
 sock.on('data', d => total_data.push(d));
 sock.on('end', () => k.retVal(total_data));
 
+console.log(tmpRetObj.toString());
+
 sock.connect(
   {
     port : 80,
